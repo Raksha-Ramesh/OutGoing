@@ -108,23 +108,34 @@ a:hover{
 </br>
 <h2><span>OutGoing</span></h2>
 <div class="container">
-<h3>Login</h3>
+<h3>Create an Account</h3>
 <form action="spl.php" method="post">
     <div class="icontainer">
       <label for="uname"><b>Username</b></label>
       <input type="text" placeholder="Enter Username" name="uname" required>
-  
+
+      <label for="eid"><b>Email Id</b></label>
+      <input type="text" placeholder="Enter Email Id" name="eid" required>
+
       <label for="psw"><b>Password</b></label>
       <input type="password" placeholder="Enter Password" name="psw" required>
+
+      <label for="pswc"><b>Re-enter Password</b></label>
+      <input type="password" placeholder="Re-enter Password" name="pswc" required>
           
-      <button type="submit">Login</button>
+      <button type="submit">Register</button>
     </div>
     <div class="icontainer">
       <button type="button" class="cancelbtn" onclick="window.location='HomePage.html';">Cancel</button>
-      <span class="psw"><a href="#">Forgot password?</a></span>
-    </div>
-    <p id="sign-up">New user? <a href="#">Sign Up</a></p>
+
   </form>
 </div>
 </body>
+<script>
+function returnToHomepage()
+{
+
+}
+</script>
+
 </html>
