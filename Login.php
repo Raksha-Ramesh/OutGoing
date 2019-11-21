@@ -112,7 +112,7 @@ a{
 <a href="HomePage.html"><h2><span>OutGoing</span></h2></a>
 <div class="container">
 <h3>Login</h3>
-<form action="spl.php" method="post">
+<form method="post">
     <div class="icontainer">
       <label for="uname"><b>Username</b></label>
       <input type="text" placeholder="Enter Username" name="uname" required>
@@ -120,14 +120,60 @@ a{
       <label for="psw"><b>Password</b></label>
       <input type="password" placeholder="Enter Password" name="psw" required>
           
-      <button type="submit">Login</button>
-    </div>
+      <input type="submit" name="login" value='login'>
+      </div>
     <div class="icontainer">
       <button type="button" class="cancelbtn" onclick="window.location='HomePage.html';">Cancel</button>
       <span class="psw"><a href="#">Forgot password?</a></span>
     </div>
-    <p id="sign-up">New user? <a href="#">Sign Up</a></p>
+    <p id="sign-up">New user? <a href="CreateAnAccount.html">Sign Up</a></p>
   </form>
 </div>
 </body>
 </html>
+<?php 
+// this php script is for connecting with database 
+// data have to fetched from local server 
+$mysql_host = 'localhost'; 
+  
+// user name is root 
+$mysql_user = 'root'; 
+  
+// function to connect with database having  
+// argument host and user name 
+$connection = mysqli_connect($mysql_host, $mysql_user,'');
+$db = mysqli_select_db($connection,'outgoing_database');
+
+//session_start();
+if(isset($_POST["login"]))
+{
+  $user = $_POST["uname"];
+  $pass = $_POST["psw"];
+
+  $query = "SELECT * FROM users WHERE username='$user' and password='$pass'";
+
+  $result=mysqli_query($connection,$query);
+
+  if($result)
+  {
+    if(mysqli_num_rows($result)>0){
+      //$_SESSION['user']=$user;
+        $cookie_name = "username";
+        $cookie_value = $user;
+        $path = "/";
+        $domain = $_SERVER['SERVER_NAME'];
+        setcookie($cookie_name, $cookie_value, time()+(60*60*2),$path,$domain);
+        header("location:HomePageAfterLogin.php");}
+    else{
+      echo "login failed";
+    }
+  }
+  else{
+    echo $query;
+  }
+  
+}
+
+?>
+
+

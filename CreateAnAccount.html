@@ -112,13 +112,13 @@ a{
 <a href="HomePage.html"><h2><span>OutGoing</span></h2></a>
 <div class="container">
 <h3>Create an Account</h3>
-<form action="spl.php" method="post">
+<form action="register.php" method="post">
     <div class="icontainer">
       <label for="uname"><b>Username</b></label>
       <input type="text" placeholder="Enter Username" name="uname" required>
 
-      <label for="eid"><b>Email Id</b></label>
-      <input type="text" placeholder="Enter Email Id" name="eid" required>
+      <label for="email"><b>Email Id</b></label>
+      <input type="text" placeholder="Enter Email Id" name="email" required>
 
       <label for="psw"><b>Password</b></label>
       <input type="password" placeholder="Enter Password" name="psw" required>
@@ -126,7 +126,7 @@ a{
       <label for="pswc"><b>Re-enter Password</b></label>
       <input type="password" placeholder="Re-enter Password" name="pswc" required>
           
-      <button type="submit">Register</button>
+      <input type="submit" name="register" value="Register">
     </div>
     <div class="icontainer">
       <button type="button" class="cancelbtn" onclick="window.location='HomePage.html';">Cancel</button>
@@ -134,11 +134,5 @@ a{
   </form>
 </div>
 </body>
-<script>
-function returnToHomepage()
-{
-
-}
-</script>
 
 </html>

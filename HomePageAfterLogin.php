@@ -37,9 +37,9 @@
               <img src='' atl='Account image' style="width: 40px;"/>
             </a>
             <div class="dropdown-menu dropdown-menu-right">
-              <a class="dropdown-item" href="myacc.html">My Account</a>
+              <a class="dropdown-item" href="myacc.php">My Account</a>
               <a class="dropdown-item" href="#">Favourites</a>
-              <a class="dropdown-item" href="#">Log Out</a>
+              <a class="dropdown-item" href="./logout.php"> Log Out </a>
             </div>
           </li>
     </ul>

@@ -1,3 +1,14 @@
+<?php
+  
+  $mysql_host = 'localhost'; 
+  $mysql_user = 'root'; 
+  $connection = mysqli_connect($mysql_host, $mysql_user,'');
+  $db = mysqli_select_db($connection,'outgoing_database');
+  if(isset($_COOKIE["username"]))
+  {
+      $u=$_COOKIE["username"];
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -66,7 +77,7 @@
             <div class="dropdown-menu dropdown-menu-right">
               <a class="dropdown-item" href="#">My Account</a>
               <a class="dropdown-item" href="#">Favourites</a>
-              <a class="dropdown-item" href="#">Log Out</a>
+              <a class="dropdown-item" href="./logout.php">Log Out</a>
             </div>
           </li>
     </ul>
@@ -80,12 +91,27 @@
         <div id="container" class="col-xl-9 mx-auto">
             <img src="" alt="OutGoing Logo"/>
           <h1 class="mb-3" style="font: arial; color:pink;">User Information</h1>         
-          <h3 align="left" style="font: times new roman; color:white;">Username: <br><font color="blue">------------</font></h3> <br><br><br>           
-          <h3 align="left" style="font: times new roman; color:white">E-mail ID: <br><font color="blue">------------</font></h3> <br>
+          <h3 align="left" style="font: times new roman; color:white;">Username: <?php $user =$_COOKIE["username"] ; echo $user//this only isn't working ?> <br><font color="blue">------------</font></h3> <br><br><br>           
+          <h3 align="left" style="font: times new roman; color:white">E-mail ID: <?php 
+
+    if($db)
+    { 
+
+        $query = "SELECT * FROM `users` WHERE username = '$u' LIMIT 1";
+        $result = mysqli_query($connection,$query);
+        $row = mysqli_fetch_array($result);
+         // while($row = mysqli_fetch_array($result)) {
+            $email = $row['email']; 
+            echo $email;  
+        //  }      
+        mysqli_close($connection);
+    }
+
+?>
+<br><font color="blue">------------</font></h3> <br>
         </div>
         
-        <div class="col-md-20 col-lg-20 col-xl-7 mx-auto">
-          <button onclick=changeDetails() class="btn btn-primary btn-lg btn-block" style="background-color: teal; "href="#">Change details</a>
+        <div class="col-md-20 col-lg-20 col-xl-7 mx-auto"> 
         </div>
       </div>
     </div>
@@ -134,39 +160,6 @@
       </div>
     </div>
   </section>
-
-  <!--
-  
-  <section class="testimonials text-center bg-light">
-    <div class="container">
-      <h2 class="mb-3 ">What people are saying...</h2>
-      <div class="row">
-        <div class="col-lg-4">
-          <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-            <img class="img-fluid rounded-circle mb-3" src="img/testimonials-1.jpg" alt="">
-            <h5>Margaret E.</h5>
-            <p class="font-weight-light mb-0">"This is fantastic! Thanks so much guys!"</p>
-          </div>
-        </div>
-        <div class="col-lg-4">
-          <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-            <img class="img-fluid rounded-circle mb-3" src="img/testimonials-2.jpg" alt="">
-            <h5>Fred S.</h5>
-            <p class="font-weight-light mb-0">"Outgoing is amazing. I've been using it to find new interesting places to hangout."</p>
-          </div>
-        </div>
-        <div class="col-lg-4">
-          <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-            <img class="img-fluid rounded-circle mb-3" src="img/testimonials-3.jpg" alt="">
-            <h5>Sarah W.</h5>
-            <p class="font-weight-light mb-0">"Thanks so much for making this website. It has made finding a place to go so easy!"</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  -->
-
   <!-- Footer -->
   <footer class="footer bg-light">
     <div class="container">
@@ -220,3 +213,8 @@
 </body>
 
 </html>
+<?php
+  }else{
+    echo "couldnt load";
+  }
+?>

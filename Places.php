@@ -1,13 +1,12 @@
 <html>
     <head>
         <title>
-        Places
-    </title>
-</head>
+            Places
+        </title>
+    </head>
     <body>
-
-        
-<?php 
+        <div id = "container">        
+        <?php 
 // this php script is for connecting with database 
 // data have to fetched from local server 
 $mysql_host = 'localhost'; 
@@ -29,9 +28,16 @@ $db = mysqli_select_db($connection,'outgoing_database');
         $result = mysqli_query($connection,$query);
         if (mysqli_num_rows($result)){
                         while($row = mysqli_fetch_assoc($result)) {
-                        echo "<script>" . $row["name"]. "<br/>link:".$row["link"]."<br/>Desc:" . $row["description"]."<br/><br/></script>";}
-                        
-                        
+                        $i = 1;
+                        $name = $row['name'];
+                        $desc = $row["description"];
+                        $link = $row["link"];
+                        echo "<div id = 'p$i' class = 'Places'>
+                        <p id = 'n$i'><h1><b>$name</b></h1></p>
+                        <p id = 'd$i'><h2><b>$desc</b></h2></p>
+                        <a href='$link' id = 'l2'>Click here to see map!</a>
+                        </div>" ; 
+                        }    
         }
         else {
             echo "No reults, please try another location";
@@ -40,11 +46,6 @@ $db = mysqli_select_db($connection,'outgoing_database');
         mysqli_close($connection);
     }
 
-
-?> 
-
-<h1>Hi</h1>
+?> </div>
     </body>
-    
-
 </html>
