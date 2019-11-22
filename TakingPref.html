@@ -1,63 +1,158 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="description" content="">
-        <meta name="author" content="">
-        <title>Preferences</title>
-        <link href="TakingPref.css" rel="stylesheet">
-    </head>
-    <body>
-        <span style="padding-left: 4%; text-align: left; float:left;">
-        <a style="color: white;  margin : 20%;" href="HomePage.html"><h2><span>OutGoing</span></h2></a>
-        </span>
-        <br><br>
-        <div id="container">
-                <h1 class="txt">HELP US SUGGEST A PLACE FOR YOU!</h1>
-                <h3>Just one step away!</h3></br>
-                <div id ="form">
-                        <form action="Places.php" method ="POST" class="drop">
-                                <select class="big" name="location" value="location">
-                
-                                        <option disabled selected value>Location</option>
-                                        <option value="Ashok Nagar">Ashok Nagar</option>
-                                        <option value="Ashok Nagar">Ashok Nagar</option>
-                                        <option value="Banashankari">Banashankari</option>
-                                        <option value="Bannerghatta">Bannerghatta</option>
-                                        <option value="Basavanagudi">Basavanagudi</option>
-                                        <option value="Bellandur">Bellandur</option>
-                                        <option value="Cubbon Park">Cubbon Park</option>
-                                        <option value="CV Raman Nagar">CV Raman Nagar</option>
-                                        <option value="Gandhinagar">Gandhinagar</option>
-                                        <option value="Hebbal">Hebbal</option>
-                                        <option value="Hosur Road">Hosur Road</option>
-                                        <option value="Infantry Road">Infantry Road</option>
-                                        <option value="Jayanagar">Jayanagar</option>
-                                        <option value="JP Nagar">JP Nagar</option>
-                                        <option value="Kasturba Road">Kasturba Road</option>
-                                        <option value="Koramangala">Koramangala</option>
-                                        <option value="Lalbagh">Lalbagh</option>
-                                        <option value="Malleshwaram">Malleshwaram</option>
-                                        <option value="Mathikere">Mathikere</option>
-                                        <option value="MG Road">MG Road</option>
-                                        <option value="Nrupathunga Road">Nrupathunga Road</option>
-                                        <option value="Rajajinagar">Rajajinagar</option>
-                                        <option value="Sadashivnagar">Sadashivnagar</option>
-                                        <option value="Sarjapur">Sarjapur</option>
-                                        <option value="Sheshadripuram">Sheshadripuram</option>
-                                        <option value="Shivajinagar">Shivajinagar</option>
-                                        <option value="Whitefield">Whitefield</option>
-                                </select>
-                                </br>
-                                <label style=" font-weight: 700;
-                                color: #fff;
+<head>
+  <title>Preferences</title>
+<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+font-family: Arial, Helvetica, sans-serif;
+background-image: url('pref.jpg');
+background-size: cover;
+}
+form {
+border: 3px;
+position: center; 
+width: 90%; /* Full width */
+height: 90%; /* Full height */
+padding-left: 15px;
+}
+button {
+  background-color: black;
+  opacity: 0.8;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%
+}
+
+button:hover {
+  opacity: 0.8;
+}
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+
+.container {
+  position: center; /* Stay in place */
+  z-index: 3; /* Sit on top */
+  margin-left: 33%;
+  margin-top: 2%;
+  width: 30%; /* Full width */
+  height: 70%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color:white; /* Fallback color */
+  opacity: 0.9;
+  padding: 30px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  border-radius: 20px;
+  box-shadow: black;
+  align-content: center;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}
+/*h2 {
+   width: 100%; 
+   text-align: center; 
+   border-bottom: 1px solid rgb(81, 197, 158); 
+   line-height: 0.1em;
+   margin: 10px 0 20px; 
+   color: rgb(81, 197, 158);
+}*/
+
+h2 span { 
+    background: black; 
+    padding:0 10px; 
+}
+h3{
+    text-align: left;
+}
+#sign-up{
+    margin-left: 30%;
+}
+a{
+  text-decoration: none;
+}
+
+</style>
+</head>
+<body>
+<div>
+  <a style="background-color: transparent; color: white"><h1>OutGoing</h1></a>
+  <hr>
+</div>
+<div style="color: white; text-align: center; margin-top: 5%; margin-bottom: 1%;">
+<h1> Help us suggest a place for you! </h1>
+</div>
+<div class="container">
+
+
+        <form action="Places.php" method="post">
+                <div class="icontainer">
+                  <label for="uname" style="align-content: center;"><b> Enter your location </b></label><br>
+                  <!--input type="" placeholder="Enter Username" name="uname" required style="border-radius: 20px;"-->
+                  <select name="location" value="location" style="border-radius: 20px;">
+                        <option disabled selected value>Location</option>
+                        <option value="Ashok Nagar">Ashok Nagar</option>
+                        <option value="Ashok Nagar">Ashok Nagar</option>
+                        <option value="Banashankari">Banashankari</option>
+                        <option value="Bannerghatta">Bannerghatta</option>
+                        <option value="Basavanagudi">Basavanagudi</option>
+                        <option value="Bellandur">Bellandur</option>
+                        <option value="Cubbon Park">Cubbon Park</option>
+                        <option value="CV Raman Nagar">CV Raman Nagar</option>
+                        <option value="Gandhinagar">Gandhinagar</option>
+                        <option value="Hebbal">Hebbal</option>
+                        <option value="Hosur Road">Hosur Road</option>
+                        <option value="Infantry Road">Infantry Road</option>
+                        <option value="Jayanagar">Jayanagar</option>
+                        <option value="JP Nagar">JP Nagar</option>
+                        <option value="Kasturba Road">Kasturba Road</option>
+                        <option value="Koramangala">Koramangala</option>
+                        <option value="Lalbagh">Lalbagh</option>
+                        <option value="Malleshwaram">Malleshwaram</option>
+                        <option value="Mathikere">Mathikere</option>
+                        <option value="MG Road">MG Road</option>
+                        <option value="Nrupathunga Road">Nrupathunga Road</option>
+                        <option value="Rajajinagar">Rajajinagar</option>
+                        <option value="Sadashivnagar">Sadashivnagar</option>
+                        <option value="Sarjapur">Sarjapur</option>
+                        <option value="Sheshadripuram">Sheshadripuram</option>
+                        <option value="Shivajinagar">Shivajinagar</option>
+                        <option value="Whitefield">Whitefield</option>
+                </select><br><br>
+
+                <label style=" font-weight: 700;
+                                color:black;
                                 margin: 0 0 1.5rem;
                                 text-align: center; "
                                 maxlength="2">Enter the number of people</label></br>
-                                <input class="big" type="number"/>
-                                </br>
-                                <select class="big" name="Purpose" value="Purpose">
+                                <input type="number" style="border-radius: 20px;">
+                                <br><br>
+                
+                                <label style=" font-weight: 700;
+                                color: black;
+                                margin: 0 0 1.5rem;
+                                text-align: center; ">What would you like to do?</label><br>
+                                <select class="big" name="Purpose" value="Purpose" style="border-radius: 20px;">
                                         <option disabled selected value>Purpose</option>
                                         <option value="famjam">Fam-jam</option>
                                         <option value="serenity">Serenity</option>
@@ -65,13 +160,11 @@
                                         <option value="adventure">Adventure</option>
                                 </select>
                                 <br><br>
-                                <input type="submit" value="Submit" class="button">
-                                <input type="reset" class="button">
-                        </form>
-                </div>
-        </div>
-        <script>
-                
-        </script>
-    </body>
-</html>
+
+                                <input type="submit" value="Submit" class="button" style="border-radius: 20px;">
+                                <input type="reset" class="button" style="border-radius: 20px;">
+                           
+            </form>
+            </div>
+            </body>
+            </html>

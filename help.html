@@ -1,144 +1,146 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+font-family: Arial, Helvetica, sans-serif;
+background-image: url('contact_us.jpg');
+background-size: cover;
+}
+form {
+border: 3px;
+position: center; 
+width: 90%; /* Full width */
+height: 90%; /* Full height */
+padding-left: 15px;
+}
 
-    <title>Outgoing - Help</title>
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;   
+}
 
-    <!-- Bootstrap core CSS -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+button {
+  background-color: black;
+  opacity: 0.8;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%
+}
 
-  <!-- Custom fonts for this template -->
-  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
-  <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+button:hover {
+  opacity: 0.8;
+}
 
-  <!-- Custom styles for this template -->
-  <link href="css/landing-page.min.css" rel="stylesheet">
+/*.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}*/
 
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
 
+.container {
+  position: center; /* Stay in place */
+  z-index: 3; /* Sit on top */
+  margin-left: 33%;
+  margin-top: 2%;
+  width: 30%; /* Full width */
+  height: 70%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color:white; /* Fallback color */
+  opacity: 0.9;
+  padding: 30px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  border-radius: 20px;
+  box-shadow: black;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}
+/*h2 {
+   width: 100%; 
+   text-align: center; 
+   border-bottom: 1px solid rgb(81, 197, 158); 
+   line-height: 0.1em;
+   margin: 10px 0 20px; 
+   color: rgb(81, 197, 158);
+}*/
+
+h2 span { 
+    background: black; 
+    padding:0 10px; 
+}
+h3{
+    text-align: left;
+}
+#sign-up{
+    margin-left: 30%;
+}
+a:hover{
+    color: red;
+}
+a{
+  text-decoration: none;
+}
+
+</style>
 </head>
-
 <body>
-    <!--Navigation-->
-    <nav class="navbar navbar-dark" style="background-color: black;">
-    <div class="navbar-brand">
-      <a class="navbar-brand" href="HomePage.html">OutGoing</a>
+ 
+<div>
+  <a style="background-color: transparent; color: white"><h1>OutGoing</h1></a>
+  <hr>
+</div>
+<div style="color: white; text-align: center; margin-top: 5%; margin-bottom: 1%;">
+<h1> We're here to help you! </h1>
+</div>
+<div class="container">
+
+<form action="contact_us.php" method="post">
+    <div class="icontainer">
+      <label for="fname"><b>First name</b></label>
+      <input type="text" placeholder="Enter your first name" name="fname" required style="border-radius: 20px;">
+      <br>
+      <label for="lname"><b>Query</b></label>
+      <div>
+        <textarea rows="10" style ="box-sizing: border-box; width : 100%" placeholder="How can we help you?" name="lname" required style="border-radius: 20px;"></textarea>
+      </div>
+      <label for="email"><b>Email ID</b></label>
+      <input type="text" placeholder="Enter your email id" name="email" required style="border-radius: 20px;"> 
+          
+      <button type="button" style="border-radius: 20px;" class="cancelbtn" style="border-radius: 20px;" onclick="window.location='index.html';">Submit</button>
     </div>
-    <ul>
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#id" id="navbardrop" data-toggle="dropdown">
-                <img src='' atl='Account image' style="width: 40px;"/>
-            </a>
-            <div class="dropdown-menu dropdown-menu-right">
-                <a class="dropdown-item" href="#">My Account</a>
-                <a class="dropdown-item" href="#">Favourites</a>
-                <a class="dropdown-item" href="#">Log Out</a>
-            </div>
-        </li>
-    </ul>
-</nav>
-
-    <!--Masthead-->
-    <header class="masthead text-white text-centre">
-        <div class="overlay"></div>
-        <div class="container">
-            <div class="row" align="center">
-                <div class="col-xl-9 mx-auto">
-                    <img src="" alt="OutGoing Logo"/>
-                <h1 class="mb-3" style="font: arial;">Let us know how we can help you</h1>
-            </div>
-            <div class="col-md-20 col-lg-20 col-xl-7 mx-auto">
-                <textarea name="help_input" rows="10" cols="50" placeholder="Type your query here"></textarea>
-                <br>
-                <button type="submit">Submit</button>
-            </div>
-        </div>
-    </header>
-
-    <!-- Icons Grid -->
-  <section class="features-icons bg-light text-center">
-    <div class="container">
-      <div class="row">
-        <div class="col" >
-          <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-            <div class="features-icons-icon d-flex">
-              <i class="material-icons m-auto">trending_up</i>
-            </div>
-            <a href="" style="color:black; text-decoration:none;" class="m-auto"><h3>Trending This Week!</h3></a>
-          </div>
-        </div>
-        <div class="col">
-          <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-            <div class="features-icons-icon d-flex">
-                <i class='fas fa-child m-auto'></i>
-            </div>
-            <a href="" style="color:black; text-decoration:none;" class="m-auto"><h3>Top Family Hangout Spots!</h3></a>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col" >
-          <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-            <div class="features-icons-icon d-flex">
-                <i class='fas fa-book-open m-auto'></i>
-            </div>
-            <a href="" style="color:black; text-decoration:none;" class="m-auto"><h3>Favourite Me-Time Spots!</h3></a>
-          </div>
-        </div>
-        <div class="col">
-          <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-            <div class="features-icons-icon d-flex">
-                <i class='fas fa-coffee m-auto'></i>
-            </div>
-            <a href="" style="color:black; text-decoration:none;" class="m-auto"><h3>Top Cafes!</h3></a>
-          </div>
-        </div>
-      </div>
-      
-      </div>
-    </div>
-  </section>
-
-
-
-  <!-- Footer -->
-  <footer class="footer bg-light">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
-          <p class="text-muted small mb-4 mb-lg-0">&copy; OutGoing 2019. All Rights Reserved.</p>
-        </div>
-        <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
-          <ul class="list-inline mb-0">
-            <li class="list-inline-item mr-3">
-              <a href="#">
-                <i class="fab fa-facebook fa-2x fa-fw"></i>
-              </a>
-            </li>
-            <li class="list-inline-item mr-3">
-              <a href="#">
-                <i class="fab fa-twitter-square fa-2x fa-fw"></i>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a href="#">
-                <i class="fab fa-instagram fa-2x fa-fw"></i>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </footer>
-  <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
+    <div class="icontainer">
+      <button type="button" style="border-radius: 20px;" class="cancelbtn" style="border-radius: 20px;" onclick="window.location='index.html';">Cancel</button>
+</form>
+</div>
 </body>
+<script src="scripts.js" type = text/js></script>
 </html>
