@@ -7,5 +7,5 @@
  		echo $_COOKIE["username"];
 	 	setcookie("username",'', 0);
 	 } 
-	header("Location:index.html");
+	header("Location:/index.html");
 ?>
